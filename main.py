@@ -1,6 +1,6 @@
 import cianparser
 from time import sleep
-a=2
+a=6
 while a < 54:
     data = cianparser.CianParser(location="Москва").get_flats(deal_type="sale",
                                                               rooms=4,
