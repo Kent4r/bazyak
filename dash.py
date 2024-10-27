@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import csv
+import seaborn_image as isns
 df = pd.read_csv('11K.csv')
 list_of_cities = df['location'].unique()
 #print(list_of_cities)
@@ -49,5 +50,11 @@ axs[0,0].set_xticklabels(axs[0,0].get_xticklabels(), rotation=60, ha='right')
 sns.countplot(x='location', data=df,  palette='dark:pink', ax=axs[1,0], order=df['location'].value_counts().index)
 axs[1,0].set_title('Количество городов')
 axs[1,0].set_xticklabels(axs[1,0].get_xticklabels(), rotation=60, ha='right')
+
+bg_image = plt.imread('photo_2024-10-25_12-07-24.jpg')
+axs[0,1].imshow(bg_image, extent=[0, 1, 0, 1], aspect='auto')
+
+bg_img = plt.imread('photo_2024-10-27_22-58-38.jpg')
+axs[1,1].imshow(bg_img, extent=[0, 1, 0, 1], aspect='auto')
 
 plt.show()

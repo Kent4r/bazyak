@@ -2,6 +2,10 @@
     "cSpell.words": [
         "countplot",
         "csvfile",
+        "imageplot",
+        "imread",
+        "imshow",
+        "isns",
         "whitegrid",
         "xticklabels",
         "xticks",
