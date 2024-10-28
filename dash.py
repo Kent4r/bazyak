@@ -41,18 +41,22 @@ dash_info.sort_values(["price_for_meter"], axis=0, ascending=[False], inplace=Tr
 
 # plt.show()
 figs, axs = plt.subplots(2,2, figsize=(26,10))
-sns.set_style('whitegrid')
 
-sns.barplot(hue='city', legend=False, x='city', y='price_for_meter', data=dash_info, palette='dark:pink', ax=axs[0,0])
+sns.set_theme(style='whitegrid', palette='dark:pink')
+sns.barplot(hue='city', legend=False, x='city', y='price_for_meter', data=dash_info, ax=axs[0,0], palette='dark:pink')
 axs[0,0].set_title('Цена за кв^2 в городах')
 axs[0,0].set_xticklabels(axs[0,0].get_xticklabels(), rotation=60, ha='right')
 
-sns.countplot(x='location', data=df,  palette='dark:pink', ax=axs[1,0], order=df['location'].value_counts().index)
+sns.set_theme(style='whitegrid', palette='dark:pink')
+sns.countplot(x='location', hue='location', legend=False, data=df, ax=axs[1,0], order=df['location'].value_counts().index, palette='dark:pink')
 axs[1,0].set_title('Количество городов')
 axs[1,0].set_xticklabels(axs[1,0].get_xticklabels(), rotation=60, ha='right')
 
-bg_image = plt.imread('photo_2024-10-25_12-07-24.jpg')
-axs[0,1].imshow(bg_image, extent=[0, 1, 0, 1], aspect='auto')
+# sns.heatmap(data=df, ax=axs[0,1])
+# axs[0,1].set_title('Верность данных')
+
+# bg_image = plt.imread('photo_2024-10-25_12-07-24.jpg')
+# axs[0,1].imshow(bg_image, extent=[0, 1, 0, 1], aspect='auto')
 
 bg_img = plt.imread('photo_2024-10-27_22-58-38.jpg')
 axs[1,1].imshow(bg_img, extent=[0, 1, 0, 1], aspect='auto')
