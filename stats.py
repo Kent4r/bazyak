@@ -8,6 +8,7 @@ import seaborn as sns
 # df['year_of_construction'].value_counts().to_csv('years_count.csv')
 
 dash = pd.read_csv('years_count.csv')
+dash.sort_values(["year_of_construction"], axis=0, ascending=[False], inplace=True)
 
 plot = sns.barplot(x='year_of_construction', y='count', data=dash, palette='dark:pink', orient='v')
 plot.set_xticklabels(plot.get_xticklabels(), rotation=90, ha='right')
