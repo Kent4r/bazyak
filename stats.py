@@ -4,10 +4,10 @@ import seaborn as sns
 import numpy as np
 
 df = pd.read_csv('cleaned_11K.csv', index_col=0)
-list = ["price","year_of_construction","floor","floors_count","rooms_count"]
-for obj in list:
-    df[obj] = df[obj].fillna(0)
-    df[obj] = df[obj].astype(int)
+# list = ["price","year_of_construction","floor","floors_count","rooms_count"]
+# for obj in list:
+#     df[obj] = df[obj].fillna(0)
+#     df[obj] = df[obj].astype(int)
 
 print(df.dtypes)
 # del df['phone']
@@ -38,3 +38,14 @@ df.to_csv('cleaned_11K.csv')
 # df = pd.read_csv('cleaned_11K.csv', index_col=0)
 
 # print(df['year_of_construction'].value_counts())
+
+
+
+# df['living_meters'] = pd.to_numeric(
+#     df['living_meters'].str.replace(',', '.').apply(lambda x: x[:-3] if pd.notna(x) else np.nan),
+#     errors='coerce'
+# ).astype('float64')
+# df['kitchen_meters'] = pd.to_numeric(
+#     df['kitchen_meters'].str.replace(',', '.').apply(lambda x: x[:-3] if pd.notna(x) else np.nan),
+#     errors='coerce'
+# ).astype('float64')
