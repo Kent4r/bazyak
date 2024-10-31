@@ -9,7 +9,8 @@ df = pd.read_csv('cleaned_11K.csv', index_col=0)
 #     df[obj] = df[obj].fillna(0)
 #     df[obj] = df[obj].astype(int)
 
-df['total_meters'].value_counts().to_csv('Meters.csv')
+df['year_of_construction'] = df['year_of_construction'].replace(0,np.nan)
+df.to_csv('cleaned_1_11K.csv')
 
 # print(df.dtypes)
 # # del df['phone']
